@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AttendMate - Student Attendance</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="app-header">
+    <div>
+      <h1>AttendMate 🎓</h1>
+      <p>Smart Student Attendance</p>
+    </div>
+    <div class="profile-icon">👨‍🎓</div>
+  </header>
+
+  <main>
+
+    <section class="welcome">
+      <h2>Welcome, Student 👋</h2>
+      <p>Track your attendance easily.</p>
+    </section>
+
+    <section class="overall-card">
+      <p>Overall Attendance</p>
+      <h2 id="overallPercentage">0%</h2>
+      <span id="overallStatus">No classes recorded</span>
+    </section>
+
+    <section class="section-title">
+      <h2>My Subjects</h2>
+      <button onclick="showAddSubject()">+ Add</button>
+    </section>
+
+    <div id="subjectList">
+
+      <div class="empty-state">
+        <div>📚</div>
+        <h3>No subjects added</h3>
+        <p>Add your first subject to start tracking.</p>
+        <button onclick="showAddSubject()">Add Subject</button>
+      </div>
+
+    </div>
+
+    <section class="quick-actions">
+
+      <button class="action-card" onclick="showAddSubject()">
+        <span>➕</span>
+        <strong>Add Subject</strong>
+        <small>Create a subject</small>
+      </button>
+
+      <button class="action-card" onclick="showHistory()">
+        <span>📅</span>
+        <strong>History</strong>
+        <small>View attendance</small>
+      </button>
+
+    </section>
+
+    <section class="tip-card">
+      <h3>💡 Attendance Tip</h3>
+      <p>
+        Maintain your attendance regularly and avoid unnecessary absences.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Add Subject Popup -->
+
+  <div id="subjectModal" class="modal">
+
+    <div class="modal-box">
+
+      <button class="close-btn" onclick="closeModal()">✕</button>
+
+      <h2>Add Subject</h2>
+
+      <label>Subject Name</label>
+
+      <input
+        type="text"
+        id="subjectName"
+        placeholder="Example: Mathematics"
+      >
+
+      <button class="primary-btn" onclick="addSubject()">
+        Add Subject
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- History Popup -->
+
+  <div id="historyModal" class="modal">
+
+    <div class="modal-box">
+
+      <button class="close-btn" onclick="closeHistory()">✕</button>
+
+      <h2>Attendance History</h2>
+
+      <div id="historyContent">
+        <p>No attendance records yet.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>AttendMate © 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
